@@ -1,0 +1,25 @@
+<div class="container">
+  <h1>Hero Form</h1>
+  <form #f="ngForm" (submit)="onSubmit(f.value)">
+    <div class="form-group">
+      <label for="name">Name...</label>
+      <input type="text" class="form-control" name="name" ngModel required>
+    </div>
+
+    <div class="form-group">
+      <label for="alterEgo">Hero name</label>
+      <input type="text" class="form-control" name="alterEgo" ngModel>
+
+
+      <label for="power">Hero Power</label>
+      <select class="form-control" name="power" ngModel required>
+        <option *ngFor="let pow of powers" [value]="pow">{{pow}}</option>
+      </select>
+
+      <button [disabled]="!f.form.valid" type="submit" class="btn btn-success">Submit</button>
+      {{submitted}}
+    </div>
+
+
+  </form>
+</div>

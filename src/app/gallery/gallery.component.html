@@ -1,0 +1,20 @@
+<h1>Gallery Form</h1>
+<form #f="ngForm" (submit)="onSubmit(f.value)">
+  <div class="form-group">
+    <label for="name">mot clé : </label>
+    <input type="text" class="form-control" name="name" ngModel required>
+
+    <button [disabled]="!f.form.valid" type="submit" class="btn btn-success">Chercher</button>
+  </div>
+
+  <div class="container">
+    <div *ngFor="let p of pagePhoto.hits" class="panel">
+      <div class="panel panel-heading">{{p.tags}}</div>
+      <div *ngIf="p.previewURL!=''" class="panel panel-body">
+        <img  src="...{{p.previewURL}}">
+      </div>
+    </div>
+
+  </div>
+
+</form>
