@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute} from '@angular/router'; /*https://yakovfain.com/2015/11/11/angular-2-passing-data-to-routes/*/
 
 @Component({
   selector: 'app-hero-list',
@@ -15,7 +15,9 @@ export class HeroListComponent implements OnInit {
     titre: string;
 
     constructor(route: ActivatedRoute) {
-        this.titre = route.snapshot.data['title'];
+        this.titre = route.snapshot.data.title + ' / ';
+        /*this.productID = route.snapshot.params['id']; // 3*/
+
         /*this.heros.push(new Hero(18, 'Dr IQ', 'aucun', 'Chuck Overstreet'));*/
     }
 
@@ -30,6 +32,6 @@ export class HeroListComponent implements OnInit {
 
     public videListe = () => {
       HeroListComponent._heros = [];
-      alert(HeroListComponent._heros.length);
+      // alert(HeroListComponent._heros.length);
     };
 }
