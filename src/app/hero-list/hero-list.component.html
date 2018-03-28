@@ -2,8 +2,8 @@
 <div class="container">
   <p>{{titre}}...{{heros.length}}</p>
   <div *ngFor="let p of heros" class="panel">
-    <div class="panel panel-heading">{{p.name}}</div>
-    <div>{{p.alterEgo}}</div>
+    <!-- http://www.learn-angular.fr/le-data-binding-angular/    interpolation vs binding -->
+    <div [ngStyle]="{color:p.name}" class="panel panel-heading">{{p.name}} {{p.alterEgo}}</div>
   </div>
     <button type="button" (click)="videListe()" class="btn btn-success">Vide liste</button>
 </div>

@@ -15,6 +15,7 @@ import {HeroListComponent} from '../hero-list/hero-list.component';
 export class HeroFormComponent implements OnInit {
     powers = ['Really Smart', 'Super Flexible', 'Super Hot', 'Weather Changer'];
     submitted = false;
+    couleur = 'green';
 
 
     private _model: Hero;
@@ -34,6 +35,7 @@ export class HeroFormComponent implements OnInit {
 
   onSubmit(data) {
       /*console.log(data);*/
+      this.couleur = data.name;
       this.heroList.heros.push(data);
 
       /*console.log(this.heroList.heros);*/

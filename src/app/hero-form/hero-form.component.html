@@ -1,5 +1,6 @@
 <div class="container">
-  <h1>Hero Form</h1>
+  <h1 [ngStyle]="{color:couleur}">Hero Form</h1>
+    {{couleur}}
   <form #f="ngForm" (submit)="onSubmit(f.value)">
     <div class="form-group">
       <label for="name">Name...</label>
