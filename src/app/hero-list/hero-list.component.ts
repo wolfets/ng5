@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
+import {Hero} from '../hero';
 
 @Component({
   selector: 'app-hero-list',
@@ -10,11 +11,22 @@ import { Injectable } from '@angular/core';
 @Injectable() /*https://embed.plnkr.co/KNq5fC/*/
 export class HeroListComponent implements OnInit {
 
-  public heros = [];
+    static _heros: any = [];
 
-  constructor() { }
+    constructor() {
+        /*this.heros.push(new Hero(18, 'Dr IQ', 'aucun', 'Chuck Overstreet'));*/
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
+    get heros() {
+        return HeroListComponent._heros;
+    }
+
+
+
+    public refresh = () => {
+      alert(HeroListComponent._heros.length);
+    };
 }
