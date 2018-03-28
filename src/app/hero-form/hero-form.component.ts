@@ -31,6 +31,8 @@ export class HeroFormComponent implements OnInit {
   }
 
   ngOnInit() {
+      this.heroList.heros.push(new Hero(1, 'Red', 'SFR', 'Chuck Overstreet'));
+      this.heroList.heros.push(new Hero(2, 'Green', 'Lantern', 'Chuck Overstreet'));
   }
 
   onSubmit(data) {

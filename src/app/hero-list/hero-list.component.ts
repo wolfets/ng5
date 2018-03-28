@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Hero} from '../hero';
 import { Injectable } from '@angular/core';
 import {ActivatedRoute} from '@angular/router'; /*https://yakovfain.com/2015/11/11/angular-2-passing-data-to-routes/*/
 
@@ -17,8 +18,8 @@ export class HeroListComponent implements OnInit {
     constructor(route: ActivatedRoute) {
         this.titre = route.snapshot.data.title + ' / ';
         /*this.productID = route.snapshot.params['id']; // 3*/
-
-        /*this.heros.push(new Hero(18, 'Dr IQ', 'aucun', 'Chuck Overstreet'));*/
+        /*this.heros.push(new Hero(1, 'Red', 'SFR', 'Chuck Overstreet'));
+        this.heros.push(new Hero(2, 'Green', 'Lantern', 'Chuck Overstreet'));*/
     }
 
     ngOnInit() {
