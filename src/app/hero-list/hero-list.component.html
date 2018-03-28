@@ -1,10 +1,10 @@
 
 <div class="container">
-  <p>hero-list...{{heros.length}}</p>
+  <p>{{titre}}...{{heros.length}}</p>
   <div *ngFor="let p of heros" class="panel">
     <div class="panel panel-heading">{{p.name}}</div>
     <div>{{p.alterEgo}}</div>
   </div>
-    <button type="button" (click)="refresh()" class="btn btn-success">refresh</button>
+    <button type="button" (click)="videListe()" class="btn btn-success">Vide liste</button>
 </div>
 

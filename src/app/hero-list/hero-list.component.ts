@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
-import {Hero} from '../hero';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-hero-list',
@@ -12,8 +12,10 @@ import {Hero} from '../hero';
 export class HeroListComponent implements OnInit {
 
     static _heros: any = [];
+    titre: string;
 
-    constructor() {
+    constructor(route: ActivatedRoute) {
+        this.titre = route.snapshot.data['title'];
         /*this.heros.push(new Hero(18, 'Dr IQ', 'aucun', 'Chuck Overstreet'));*/
     }
 
@@ -26,7 +28,8 @@ export class HeroListComponent implements OnInit {
 
 
 
-    public refresh = () => {
+    public videListe = () => {
+      HeroListComponent._heros = [];
       alert(HeroListComponent._heros.length);
     };
 }
