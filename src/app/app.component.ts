@@ -13,7 +13,7 @@ export class AppComponent {
   constructor(private heroList: HeroListComponent){
   }
 
-  get herosLength{
+  get herosLength() {
     return this.heroList.heros.length;
   }
 }

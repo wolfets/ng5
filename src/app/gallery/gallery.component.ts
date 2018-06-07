@@ -13,7 +13,6 @@ export class GalleryComponent implements OnInit {
           {tags: 'toto', previewURL: ''}
         , {tags: 'titi', previewURL: ''}
       ]};
-  ]
 
   constructor() {
   }

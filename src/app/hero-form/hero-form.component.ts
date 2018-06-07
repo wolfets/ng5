@@ -17,6 +17,7 @@ export class HeroFormComponent implements OnInit {
     submitted = false;
     couleur = 'green';
 
+    contact:any = [];
 
     private _model: Hero;
     get model(): Hero {
@@ -31,8 +32,13 @@ export class HeroFormComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.heroList.heros.push(new Hero(1, 'Red', 'SFR', 'Chuck Overstreet'));
-      this.heroList.heros.push(new Hero(2, 'Green', 'Lantern', 'Chuck Overstreet'));
+      this.contact = this.heroList.getContact();
+      //console.log(this.contact);
+
+      //
+      this.heroList.heros.push(new Hero(1, 'Red', 'Chuck Overstreet','SFR', ));
+      this.heroList.heros.push(new Hero(2, 'Green', 'Chuck Overstreet','Lantern', ));
+      //this.heroList.heros.push(new Hero(3, this.contact.response[0].name, this.contact.response[0].power, this.contact.response[0].alterEgo));
   }
 
   onSubmit(data) {

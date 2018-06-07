@@ -13,6 +13,7 @@ import { HomeAngularComponent } from './home-angular/home-angular.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import {FormsModule} from '@angular/forms';
 import { GalleryComponent } from './gallery/gallery.component';
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -28,7 +29,7 @@ import { GalleryComponent } from './gallery/gallery.component';
     GalleryComponent
   ],
   imports: [
-    BrowserModule, FormsModule, AppRoutingModule
+    BrowserModule, FormsModule, AppRoutingModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
